@@ -1,0 +1,214 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(./Back.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+
+  background-position: center;
+}
+
+.cont {
+  width: 450px;
+  height: auto;
+  min-height: 400px;
+  padding: 30px;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 10px;
+  backdrop-filter: blur(500px);
+}
+
+h1 {
+  color: #eee;
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.in-cont {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.inp {
+  flex: 1;
+  outline: none;
+  padding: 10px 10px 10px 20px;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 30px;
+  color: #eee;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.inp::placeholder {
+  color: #bfbfbf;
+}
+
+.add {
+  border: none;
+  outline: none;
+  background: rgb(18, 17, 17);
+  color: #fff;
+  font-size: 35px;
+  cursor: pointer;
+  border-radius: 50%;
+  height: 33px;
+  width: 33px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.empty {
+  margin: 55px auto 0;
+  display: block;
+}
+
+.tod {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #8B7355;
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 10px 12px;
+  border: 2px solid white;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.tod:first-child {
+  margin-top: 0;
+}
+
+.tod:last-child {
+  margin-bottom: 0;
+}
+
+.tod label {
+  cursor: pointer;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  color: #eee;
+}
+
+.tod span {
+  padding-left: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+span::before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  margin-left: -30px;
+  border-radius: 100px;
+  border: 2px solid white;
+}
+
+input[type='checkbox'] {
+  visibility: hidden;
+}
+
+input:checked + span {
+  text-decoration: line-through
+}
+
+.tod:hover input:checked + span::before, input:checked + span::before {
+  background: url(./check.svg) 50% 50% no-repeat #09bb21;
+  border-color: #09bb21;
+}
+
+.tod:hover span::before {
+  border-color: #eee;
+}
+
+.tod .delete-btn  {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #eee;
+  font-size: 24px;
+}
+
+.t-cont {
+  height: 300px;
+  overflow: overlay;
+}
+
+.t-cont::-webkit-scrollbar-track  {
+  background: rgb(247, 247, 247);
+  border-radius: 20px
+}
+
+.t-cont::-webkit-scrollbar  {
+  width: 0;
+}
+
+.t-cont:hover::-webkit-scrollbar  {
+  width: 7px;
+}
+
+.t-cont::-webkit-scrollbar-thumb  {
+  background: #d5d5d5;
+  border-radius: 20px;
+}
+
+.fil {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.filr {
+  border: 2px solid white;
+  color: #eee;
+  padding: 5px 15px;
+  border-radius: 100px;
+  border: 2px solid white;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.filr.active, .filr:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid rgba(0, 0, 0, 0.57);
+}
+
+.del {
+  display: flex;
+  color: #eee;
+  border: 2px solid rgba(0, 0, 0, 0);
+  border-radius: 15px;
+  padding: 7px 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.del:hover {
+  border-radius: 15px;
+  border: 2px solid rgba(0, 0, 0, 0.57);
+  background-color: white;
+  color: black;
+}
