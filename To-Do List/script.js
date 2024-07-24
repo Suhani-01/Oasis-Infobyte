@@ -4,13 +4,8 @@ const tods = document.querySelector(".tods");
 const empty = document.querySelector(".empty");
 let todosJson = JSON.parse(localStorage.getItem("todos")) || [];
 const del = document.querySelector(".del");
-const filr = document.querySelectorAll(".filr");
-let filter = '';
 
 function getTodoHtml(todo, index) {
-  if (filter && filter != todo.status) {
-    return '';
-  }
   let checked = todo.status == "completed" ? "checked" : "";
   return /* html */ `
     <li class="tod">
@@ -20,7 +15,7 @@ function getTodoHtml(todo, index) {
       </label>
       <button class="delete-btn" data-index="${index}" onclick="remove(this)"><i class="fa fa-times"></i></button>
     </li>
-  `; 
+  `;
 }
 
 function showTodos() {
@@ -33,7 +28,7 @@ function showTodos() {
   }
 }
 
-function addTodo(todo)  {
+function addTodo(todo) {
   inp.value = "";
   todosJson.unshift({ name: todo, status: "pending" });
   localStorage.setItem("todos", JSON.stringify(todosJson));
@@ -75,22 +70,10 @@ function remove(todo) {
   localStorage.setItem("todos", JSON.stringify(todosJson));
 }
 
-filr.forEach(function (el) {
-  el.addEventListener("click", (e) => {
-    if (el.classList.contains('active')) {
-      el.classList.remove('active');
-      filter = '';
-    } else {
-      filr.forEach(tag => tag.classList.remove('active'));
-      el.classList.add('active');
-      filter = e.target.dataset.filter;
-    }
-    showTodos();
-  });
-});
-
 del.addEventListener("click", () => {
   todosJson = [];
   localStorage.setItem("todos", JSON.stringify(todosJson));
   showTodos();
 });
+
+showTodos();
