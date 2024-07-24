@@ -93,6 +93,7 @@ h1 {
   cursor: pointer;
 }
 
+
 .tod:first-child {
   margin-top: 0;
 }
@@ -153,7 +154,11 @@ input:checked + span {
 
 .t-cont {
   height: 300px;
+  margin-bottom: 45px;
   overflow: overlay;
+  border: 1px solid rgba(255, 255, 255, 0.066);
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .t-cont::-webkit-scrollbar-track  {
@@ -174,34 +179,27 @@ input:checked + span {
   border-radius: 20px;
 }
 
-.fil {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 25px;
+.fil{
+  
+  position: fixed;
+  bottom: 20px;
+  align-items: center;
+  margin-left: 4%;
+  margin-left: 4%;
+  width: 80%;
 }
 
-.filr {
-  border: 2px solid white;
-  color: #eee;
-  padding: 5px 15px;
-  border-radius: 100px;
-  border: 2px solid white;
-  transition: all 0.2s ease;
-  cursor: pointer;
-}
 
-.filr.active, .filr:hover {
-  background-color: white;
-  color: black;
-  border: 2px solid rgba(0, 0, 0, 0.57);
-}
 
 .del {
   display: flex;
   color: #eee;
+  background-color: #914040;
   border: 2px solid rgba(0, 0, 0, 0);
   border-radius: 15px;
-  padding: 7px 15px;
+  justify-content: center;
+  padding: 6px;
+  width: 100%;
   cursor: pointer;
   transition: all 0.2s ease;
 }
